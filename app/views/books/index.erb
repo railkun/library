@@ -1,13 +1,23 @@
-<% @books.each do |book| %>
+<h1> Library </h1>
+<table>
+  <tr>
+    <th> Name </th>
+    <th> Isbn </th>
+    <th> Description </th>
+    <th> Action </th>
+  </tr>
+  <% @books.each do |book| %>
+    <tr>
+      <td> <%= link_to book.title, book_path(book) %> </td>
+      <td> <%= book.isbn  %> </td>
+      <td> <%= book.description %> </td>
+      <td>
+        <%=link_to fa_icon("plus-circle"), new_book_path %>
+        <%=link_to fa_icon("pencil-square-o"), edit_book_path(book) %>
+        <%=link_to fa_icon("trash-o"), book_path(book), method: :delete, "data-confirm": 'Are you sure?' %>
 
-  <h2>
-    <%= link_to book.title, book_path(book) %>
-    <!-- <a href="/books/<%= book.id %>"><%= book.title %></a>
-    <%= books_path %>
-    <%= book_path(book) %>
-    <%= link_to book.title, book_path(book) %> -->
 
-  </h2>
-  <hr>
-
-<% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>
