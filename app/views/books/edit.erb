@@ -1,15 +1,1 @@
-<% if @book.errors.full_messages.any? %>
-  <% @book.errors.full_messages.each do |error_message| %>
-    <%= error_message if @book.errors.full_messages.first == error_message %> <br />
-  <% end %>
-<% end %>
-
-<%= form_for @book do |f| %>
-  <%= f.text_field :title %>
-  <br>
-  <%= f.text_field :isbn %>
-  <br>
-  <%= f.text_area :description, size: '60x12' %>
-  <br>
-  <%= f.submit 'Update' %>
-<% end %>
+<%= render 'books/form' %>

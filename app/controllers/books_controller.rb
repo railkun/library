@@ -15,6 +15,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
+      BookMailer.book_created(@book).deliver
       redirect_to root_path, notice: 'Book is created'
     else
       render :new
