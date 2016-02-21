@@ -14,17 +14,3 @@
  *= require_self
  *= require font-awesome
  */
-table th {
-  background-color: #585858;
-  color: white;
-  border-style: solid;
-  border-color: black;
-  padding: 10px;
-}
-table td {
-  background-color: #585858;
-  color: white;
-  border-style: solid;
-  border-color: black;
-  padding: 5px;
-}
